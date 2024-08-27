@@ -1,0 +1,9 @@
+.version-container {
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.version-info {
+  font-size: 3em;
+}
