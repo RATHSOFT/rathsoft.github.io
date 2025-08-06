@@ -21,13 +21,13 @@ jobs:
         env:
           JWT_TOKEN: ${{ secrets.JWT_TOKEN }} # Access the JWT token from secrets
         run: |
-          echo "CURL_OUTPUT=$(curl -X GET -H "Authorization: Bearer $JWT_TOKEN" "$CARD_WEEKLY_ENDPOINT")" >> $GITHUB_OUTPUT
+          echo "curl -X GET -H "Authorization: Bearer $JWT_TOKEN" "$CARD_WEEKLY_ENDPOINT" >> $GITHUB_OUTPUT
       - name: Overwrite file
         uses: "DamianReeves/write-file-action@master"
         with:
           path: ./weekly-cards.html
           write-mode: overwrite
-          contents: TEST
+          contents: ${{ steps.fetch-data.outputs.* }}
       - name: Commit files
         run: |
           git add .
