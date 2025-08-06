@@ -17,6 +17,7 @@ jobs:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
           fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
       - name: Fetch data with curl
+        id: fetch-data
         env:
           JWT_TOKEN: ${{ secrets.JWT_TOKEN }} # Access the JWT token from secrets
         run: |
