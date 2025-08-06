@@ -26,7 +26,7 @@ jobs:
       - name: Overwrite file
         uses: "DamianReeves/write-file-action@master"
         with:
-          path: ./weekly-cards.html
+          path: ./weekly-cards.json
           write-mode: overwrite
           contents: |
             ${{ steps.fetch-data.outputs.CURL_OUTPUT }}
