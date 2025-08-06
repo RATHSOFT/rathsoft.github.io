@@ -21,9 +21,6 @@ jobs:
           write-mode: overwrite
           contents: |
             Hello World!
-      - name: Create local changes
-        run: |
-          ...
       - name: Commit files
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
