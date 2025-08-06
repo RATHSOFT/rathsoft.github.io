@@ -27,7 +27,7 @@ jobs:
         with:
           path: ./weekly-cards.html
           write-mode: overwrite
-          contents: ${{ steps.fetch-data.outputs.CURL_OUTPUT }}
+          contents: TEST
       - name: Commit files
         run: |
           git add .
