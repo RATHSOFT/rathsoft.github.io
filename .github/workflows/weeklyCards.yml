@@ -20,6 +20,7 @@ jobs:
         id: fetch-data
         env:
           JWT_TOKEN: ${{ secrets.JWT_TOKEN }} # Access the JWT token from secrets
+          CARD_WEEKLY_ENDPOINT: ${{ secrets.CARD_WEEKLY_ENDPOINT }}
         run: |
           echo "CURL_OUTPUT=$(curl -X GET -H "Authorization: Bearer $JWT_TOKEN" "$CARD_WEEKLY_ENDPOINT")" >> $GITHUB_OUTPUT
       - name: Overwrite file
